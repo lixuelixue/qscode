@@ -214,7 +214,7 @@
     <!-- Unnamed (下拉列表框) -->
 
     <div id="u68" class="ax_default droplist" >
-        <select id="u68_input" class="selector" onchange="show_sub(this.options[this.options.selectedIndex].value)">
+        <select  id="point" name="point" style="width:206px;height:22px" onchange="show_sub(this.options[this.options.selectedIndex].value)">
             <option value="大华">大华</option>
             <option value="海康">海康</option>
         </select>
@@ -438,21 +438,12 @@
                 <!-- Unnamed (图片) -->
                 <div id="u114" class="ax_default image">
                     <!--<img id="u114_img" class="img " src="__PUBLIC__/home/images/run/u114.jpg"/>-->
-                    <object classid="clsid:9BE31822-FDAD-461B-AD51-BE1D1C159921"
-                            width="100%"
-                            height="100%"
-                            id="vlc"
-                            events="True">
-
-                        <!--<param id="url" name="MRL" value="rtsp://admin:admin@192.168.1.108:554/cam/realmonitor?channel=1&subtype=0" />-->
-                        <param id="url" name="MRL" value="" />
-                        <param name="ShowDisplay" value="True" />
-                        <param name="AutoLoop" value="true" />
-                        <param name="AutoPlay" value="true" />
-                        <param name="Volume" value="50" />
-                        <param name="toolbar" value="true" />
-                        <param name="StartTime" value="0" />
-
+                    <object classid="clsid:9BE31822-FDAD-461B-AD51-BE1D1C159921" id="obj" height="100%" width="100%" name="ocx" >
+                        <param  id="rtsp" name="mrl" value="rtsp://192.168.1.108:554/cam/realmonitor?channel=1&subtype=0&unicast=true&proto=Onvif">
+                        <param name="volume" value="50">
+                        <!--<param name="autoplay" value="true"> -->
+                        <param name="control" value="false">
+                        <param name="toolbar" value="false">
                     </object>
                     <!-- Unnamed () -->
                     <div id="u115" class="text" style="display: none; visibility: hidden">
@@ -682,79 +673,41 @@
         </div>
     </div>
 </div>
-</body>
 <script>
+    console.log('js输出成功')
+    var ob = document.getElementById('obj');
+    var parma = document.getElementById('rtsp');
+    //alert (obj);
+    if(obj.object == null){
+        alert('没有安装插件，请下载');
+        location.href="__PUBLIC__/vlc-2.0.6-win32.exe";
+    }
+    else{
+    }
 
+    var select = document.getElementById('point');
+    var index = select.selectedIndex;
+    var value = select.options[index].value;
+    console.log(value);
+    console.log('这是'+parma.value);
+
+    // console.log(parma.value);
 
     function show_sub(v){
-        alert(v);
-    }// 获取选中的摄像头
-
-
-
-
-    var vlc;
-    function initPlayUrl(){
-        vlc=document.getElementById("vlc");
-
-
-        if(v == '大华'){
-            var vedio_url='rtsp://admin:admin123@192.168.1.64:554/Streaming/Channels/101?transportmode=unicast&profile=Profile_1';
-            itemId = vlc.playlist.add(vedio_url);
-            vlc.playlist.playItem(itemId);
+        switch (v) {
+            case '大华':
+                var id= obj.playlist.add('rtsp://admin:admin@192.168.1.108:554/cam/realmonitor?channel=1&subtype=0&unicast=true&proto=Onvif');
+                obj.playlist.playItem(id);
+                obj.playlist.play();
+                break;
+            case '海康':
+                var id = obj.playlist.add('rtsp://admin:admin123@192.168.1.64:554/Streaming/Channels/101?transportmode=unicast&profile=Profile_1')
+                obj.playlist.playItem(id);
+                obj.playlist.play();
+            default:
+                break;
         }
-        else if(v == '海康') {
-            var vedio_url='rtsp://admin:admin123@192.168.1.64:554/Streaming/Channels/101?transportmode=unicast&profile=Profile_1';
-            itemId = vlc.playlist.add(vedio_url);
-            vlc.playlist.playItem(itemId);
-        }
-
-
-
     }
-    initPlayUrl();
-
-
-//    var o = document.getElementById('vlc');
-//
-//
-//
-//    if(v == '大华'){
-//        o.object.MRL = "rtsp://admin:admin@192.168.1.108:554/cam/realmonitor?channel=1&subtype=0";
-//    }
-//     else if(v == '海康') {
-//        o.object.MRL = "rtsp://admin:admin123@192.168.1.64:554/Streaming/Channels/101?transportmode=unicast&profile=Profile_1";
-//    }
-
-
-
-
-
-//    var prms=document.getElementById('vlc').getElementsByTagName('param');
-//    alert(prms);
-//    for(var i=0;i<prms.length;i++){
-//
-//        var a = prms[i];
-//        alert(a);
-//        if(prms[i].name=="MRL")
-//        {
-//            alert(prms[i]);
-//            var prms_value = prms[i].value;
-//            alert(prms_value);
-//
-//            if(v == '大华'){
-//                prms_value.value = "rtsp://admin:admin@192.168.1.108:554/cam/realmonitor?channel=1&subtype=0";
-//            }
-//            else if(v == '海康'){
-//                prms_value.value = "rtsp://admin:admin123@192.168.1.64:554/Streaming/Channels/101?transportmode=unicast&profile=Profile_1";
-//            }
-//
-//
-//        }
-
-//    }
-
-
-
 </script>
+</body>
 </html>

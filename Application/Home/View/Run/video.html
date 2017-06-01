@@ -902,16 +902,16 @@
             </div>
 
             <!-- Unnamed (动态面板) -->
-            <div id="u309" class="ax_default">
+            <!--<div id="u309" class="ax_default">
                 <div id="u309_state0" class="panel_state" data-label="State1">
                     <div id="u309_state0_content" class="panel_state_content">
 
-                        <!-- Unnamed (热区) -->
+                        &lt;!&ndash; Unnamed (热区) &ndash;&gt;
                         <div id="u310" class="ax_default">
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
 
             <!-- 子系统 (动态面板) -->
             <div id="u311" class="ax_default ax_default_hidden" data-label="子系统" style="display: none; visibility: hidden">
@@ -1081,7 +1081,6 @@
     }
     function gain_id2() {
         id = "vlcb";
-        alert(id);
         console.log(id);
     }
     function gain_id3() {
@@ -1098,7 +1097,7 @@
         var id3 = id;
         console.log("大华"+id3);
         var obj = document.getElementById(id3);
-        alert(obj);
+        //alert(obj);
         var id4= obj.playlist.add('rtsp://admin:admin@192.168.1.108:554/cam/realmonitor?channel=1&subtype=0&unicast=true&proto=Onvif');
         obj.playlist.playItem(id4);
         obj.playlist.play();
@@ -1107,7 +1106,7 @@
         var id3 = id;
         console.log("海康"+id3);
         var obj = document.getElementById(id3);
-        alert(obj);
+        //alert(obj);
         var id4= obj.playlist.add('rtsp://admin:admin123@192.168.1.64:554/Streaming/Channels/101?transportmode=unicast&profile=Profile_1');
         obj.playlist.playItem(id4);
         obj.playlist.play();

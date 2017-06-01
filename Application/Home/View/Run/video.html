@@ -16,7 +16,7 @@
     <script src="__PUBLIC__/home/resources/scripts/messagecenter.js"></script>
     <script src="__PUBLIC__/home/files/video/data.js"></script>
     <script src="__PUBLIC__/home/js/jquery-3.2.1.js"></script>
-    <!--<style type="text/css">
+    <style type="text/css">
         .divImgIn {
             text-align:center;
             width:100px;
@@ -24,7 +24,7 @@
         .divImgOut{
             background-color: #8f949a
         }
-    </style>-->
+    </style>
 </head>
 <body>
 <div id="base" class="">
@@ -474,16 +474,14 @@
 
     <!--&lt;!&ndash; Unnamed (矩形) &ndash;&gt;-->
     <div id="u228" class="ax_default label"  >
-
+        <div id="u228_div" class=""></div>
         <!-- Unnamed () -->
         <!--<div id="u229" class="text"  id="monitoringpoint">-->
             <!--<p><span>海康</span></p>-->
         <!--</div>-->
 
         <div >
-            <hr/>
             <div class="divImgIn" name="大华" ondblclick="change_one()">大华</div>
-            <hr/>
             <div class="divImgIn" name="海康" ondblclick="change_two()">海康</div>
         </div>
 
@@ -734,39 +732,44 @@
 
 
     <!--右下-->
-    <div style="background-color: #8f949a;" id="u286" class="ax_defaultimage">
+
+    <div style="background-color: #8f949a;" id="u286" class="ax_defaultimage"  onmousedown="gain_id1()">
         <object classid="clsid:9BE31822-FDAD-461B-AD51-BE1D1C159921"
-                width="100%"
+                width="80%"
                 height="100%"
                 id="vlca"
                 events="True"
-                onmousedown="gain_id1()">
+                >
+            <param name="wmode" value="transparent">
             <param id="urla" name="MRL" value=""/>
+            <param name="ShowDisplay" value="True" />
+            <param name="AutoLoop" value="true" />
             <param name="AutoPlay" value="true" />
             <param name="Volume" value="50" />
             <param name="toolbar" value="false" />
             <param name="StartTime" value="0" />
         </object>
-        <!-- Unnamed () -->
-        <!--<div id="u287" class="text" style="display:none; visibility: hidden">-->
-            <!--<p><span></span></p>-->
-        <!--</div>-->
+
     </div>
 
 
 
 
+
+    <!--右上-->
     <!-- Unnamed (图片) -->
-    <div  style="background-color: #8f949a;" id="u288" class="ax_defaultimage">
-        <!--<img id="u288_img" class="img " src="__PUBLIC__/home/images/run/u114.jpg"/>-->
+    <div  style="background-color: #8f949a;" id="u288" class="ax_defaultimage" onmousedown="gain_id2()">
 
         <object classid="clsid:9BE31822-FDAD-461B-AD51-BE1D1C159921"
-                width="100%"
+                width="80%"
                 height="100%"
                 id="vlcb"
                 events="True"
-                onmousedown="gain_id2()">
+        >
+            <param name="wmode" value="transparent">
             <param id="urlb" name="MRL" value="" />
+            <param name="ShowDisplay" value="True" />
+            <param name="AutoLoop" value="true" />
             <param name="AutoPlay" value="true" />
             <param name="Volume" value="50" />
             <param name="toolbar" value="false" />
@@ -780,15 +783,18 @@
     </div>
 
     <!-- Unnamed (图片) -->
-    <div style="background-color: #8f949a;" id="u290" class="ax_defaultimage">
+    <div style="background-color: #8f949a;" id="u290" class="ax_defaultimage" onmousedown="gain_id3()">
         <!--<img id="u290_img" class="img " src="__PUBLIC__/home/images/video/u290.jpg"/>-->
         <object classid="clsid:9BE31822-FDAD-461B-AD51-BE1D1C159921"
-                width="100%"
+                width="80%"
                 height="100%"
                 id="vlcc"
                 events="True"
-                onmousedown="gain_id3()">
+                >
+            <param name="wmode" value="transparent">
             <param id="urlc" name="MRL" value="" />
+            <param name="ShowDisplay" value="True" />
+            <param name="AutoLoop" value="true" />
             <param name="AutoPlay" value="true" />
             <param name="Volume" value="50" />
             <param name="toolbar" value="false" />
@@ -801,14 +807,18 @@
     </div>
 
     <!-- Unnamed (图片) -->
-    <div style="background-color: #8f949a;" id="u292" class="ax_defaultimage" >
+    <div style="background-color: #8f949a;" id="u292" class="ax_defaultimage" onmousedown="gain_id4()">
         <object classid="clsid:9BE31822-FDAD-461B-AD51-BE1D1C159921"
-                width="100%"
+                width="80%"
                 height="100%"
                 id="vlcd"
                 events="True"
-                onmousedown="gain_id4()">
+
+                >
+            <param name="wmode" value="transparent">
             <param id="urld" name="MRL" value="" />
+            <param name="ShowDisplay" value="True" />
+            <param name="AutoLoop" value="true" />
             <param name="id" value="" />
             <param name="AutoPlay" value="true" />
             <param name="Volume" v alue="50" />
@@ -821,15 +831,6 @@
         <!--</div>-->
     </div>
     <!--视频播放区域结束-->
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1071,129 +1072,47 @@
 
 
     var id;
-    var vlcid;
-    var vlcrtsp;
+
 
     // 获取视频播放位置的object的id
     function gain_id1() {
         id = "vlca";
-        alert(vlcid);
-        alert(vlcrtsp);
+        console.log(id);
     }
     function gain_id2() {
         id = "vlcb";
-        alert(vlcid);
-        alert(vlcrtsp);
+        alert(id);
+        console.log(id);
     }
     function gain_id3() {
         id = "vlcc";
-        alert(vlcid);
-        alert(vlcrtsp);
+        console.log(id);
     }
     function gain_id4() {
         id = "vlcd";
-        alert(vlcid);
-        alert(vlcrtsp);
+        console.log(id);
     }
 
 
     function change_one() {
-        var id1 = id;
-        var obj = document.getElementById(id1);
-        var id2= obj.playlist.add('rtsp://rtsp://admin:admin123@192.168.1.64:554/Streaming/Channels/101?transportmode=unicast&profile=Profile_1');
-        obj.playlist.playItem(id2);
+        var id3 = id;
+        console.log("大华"+id3);
+        var obj = document.getElementById(id3);
+        alert(obj);
+        var id4= obj.playlist.add('rtsp://admin:admin@192.168.1.108:554/cam/realmonitor?channel=1&subtype=0&unicast=true&proto=Onvif');
+        obj.playlist.playItem(id4);
         obj.playlist.play();
-        vlcid = id1;
-        vlcrtsp = "dahua";
     }
     function change_two() {
         var id3 = id;
-        var obja = document.getElementById(id3);
-        var id4= obja.playlist.add('rtsp://admin:admin123@192.168.1.64:554/Streaming/Channels/101?transportmode=unicast&profile=Profile_1');
-        obja.playlist.playItem(id4);
-        obja.playlist.play();
-        vlcid = id3;
-        vlcrtsp = "haikang";
-    }
-    function PTZControl(funcName){
-        var res = null;
-        alert(funcName);
-        switch(funcName){
-            case "PTZLeftUp":
-                res = StartTask_PTZ(25,4);	//云台：左上
-                break;
-            case "PTZUp":
-                res = StartTask_PTZ(21,4);	//云台：上
-                break;
-            case "PTZRightUp":
-                res = StartTask_PTZ(26,4);	//云台：右上
-                break;
-            case "PTZLeft":
-                res =StartTask_PTZ(23,4);	//云台：左
-                break;
-            case "PTZAuto":
-                res = StartTask_PTZ(29,4);	//云台：自转
-                break;
-            case "PTZRight":
-                res = StartTask_PTZ(24,4);	//云台：右
-                break;
-            case "PTZLeftDown":
-                res = StartTask_PTZ(27,4);	//云台：左下
-                break;
-            case "PTZDown":
-                res = StartTask_PTZ(22,4);	//云台：下
-                break;
-            case "PTZRightDown":
-                res = StartTask_PTZ(28,4);	//云台：右下
-                break;
-            case "PTZStop":
-                res = StartTask_PTZ(1,4);	//云台：停止
-                break;
-            case "PTZAddTimes":
-                res = StartTask_PTZ(11,4);	//云台：焦距+
-                break;
-            case "PTZMinusTimes":
-                res = StartTask_PTZ(12,4);	//云台：焦距-
-                break;
-            case "PTZFarFocus":
-                res = StartTask_PTZ(13,4);	//云台：焦点+
-                break;
-            case "PTZNearFocus":
-                res = StartTask_PTZ(14,4);	//云台：焦点-
-                break;
-            case "PTZLargeAperture":
-                res = StartTask_PTZ(15,4);	//云台：光圈+
-                break;
-            case "PTZSmallAperture":
-                res = StartTask_PTZ(16,4);	//云台：光圈-
-                break;
-        }
-}
-    function StartTask_PTZ(ptz,ptzurl) {
-
-        if(vlcid != undefined){
-
-        }
+        console.log("海康"+id3);
+        var obj = document.getElementById(id3);
+        alert(obj);
+        var id4= obj.playlist.add('rtsp://admin:admin123@192.168.1.64:554/Streaming/Channels/101?transportmode=unicast&profile=Profile_1');
+        obj.playlist.playItem(id4);
+        obj.playlist.play();
 
     }
-    function send_request($url,$post_string) {
-        $soap_do = curl_init();
-        curl_setopt($soap_do, CURLOPT_URL,            $url );
-        curl_setopt($soap_do, CURLOPT_CONNECTTIMEOUT, 10);
-        curl_setopt($soap_do, CURLOPT_TIMEOUT,        10);
-        curl_setopt($soap_do, CURLOPT_RETURNTRANSFER, true );
-        curl_setopt($soap_do, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($soap_do, CURLOPT_SSL_VERIFYHOST, false);
-        curl_setopt($soap_do, CURLOPT_POST,           true );
-        curl_setopt($soap_do, CURLOPT_POSTFIELDS,    $post_string);
-        curl_setopt($soap_do, CURLOPT_HTTPHEADER,     array('Content-Type: text/xml; charset=utf-8', 'Content-Length: '.strlen($post_string) ));
-        //curl_setopt($soap_do, CURLOPT_USERPWD, 'admin' . ":" . 'admin'); // HTTP authentication
-            $result=substr($result,strpos($result,"<s:Body>"));
-            $result=substr($result,0,strpos($result,"</s:Body>")+strlen("</s:Body>"));
-            $xmldata=simplexml_load_string($result);
-            return json_decode(json_encode($xmldata),1);
-    }
-
 
 </script>
 </html>

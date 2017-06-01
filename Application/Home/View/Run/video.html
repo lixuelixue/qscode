@@ -737,7 +737,7 @@
         <object classid="clsid:9BE31822-FDAD-461B-AD51-BE1D1C159921"
                 width="80%"
                 height="100%"
-                id="vlca"
+                id="0"
                 events="True"
                 >
             <param name="wmode" value="transparent">
@@ -763,7 +763,7 @@
         <object classid="clsid:9BE31822-FDAD-461B-AD51-BE1D1C159921"
                 width="80%"
                 height="100%"
-                id="vlcb"
+                id="1"
                 events="True"
         >
             <param name="wmode" value="transparent">
@@ -788,7 +788,7 @@
         <object classid="clsid:9BE31822-FDAD-461B-AD51-BE1D1C159921"
                 width="80%"
                 height="100%"
-                id="vlcc"
+                id="2"
                 events="True"
                 >
             <param name="wmode" value="transparent">
@@ -811,7 +811,7 @@
         <object classid="clsid:9BE31822-FDAD-461B-AD51-BE1D1C159921"
                 width="80%"
                 height="100%"
-                id="vlcd"
+                id="3"
                 events="True"
 
                 >
@@ -1072,46 +1072,122 @@
 
 
     var id;
-
+    var brand;
+    var arr = new Array(4);
 
     // 获取视频播放位置的object的id
     function gain_id1() {
-        id = "vlca";
-        console.log(id);
+        id = "0";
     }
     function gain_id2() {
-        id = "vlcb";
-        console.log(id);
+        id = "1";
     }
     function gain_id3() {
-        id = "vlcc";
-        console.log(id);
+        id = "2";
     }
     function gain_id4() {
-        id = "vlcd";
-        console.log(id);
+        id = "3";
     }
 
 
     function change_one() {
-        var id3 = id;
-        console.log("大华"+id3);
-        var obj = document.getElementById(id3);
-        //alert(obj);
+        var obj = document.getElementById(id);
+        if(id == '0'){
+            arr[0] = "dahua";
+        }else if(id == '1'){
+            arr[1] = 'dahua';
+        }else if(id == '2'){
+            arr[2] = 'dahua';
+        }else if(id == '3'){
+            arr[3] = 'dahua';
+        }
+
+        //arr.push(id+' dahua') ;f
         var id4= obj.playlist.add('rtsp://admin:admin@192.168.1.108:554/cam/realmonitor?channel=1&subtype=0&unicast=true&proto=Onvif');
         obj.playlist.playItem(id4);
         obj.playlist.play();
     }
     function change_two() {
-        var id3 = id;
-        console.log("海康"+id3);
-        var obj = document.getElementById(id3);
-        //alert(obj);
+        var obj = document.getElementById(id);
+        if(id == '0'){
+            arr[0] = "haikang";
+        }else if(id == '1'){
+            arr[1] = 'haikang';
+        }else if(id == '2'){
+            arr[2] = 'haikang';
+        }else if(id == '3'){
+            arr[3] = 'haikang';
+        }
         var id4= obj.playlist.add('rtsp://admin:admin123@192.168.1.64:554/Streaming/Channels/101?transportmode=unicast&profile=Profile_1');
         obj.playlist.playItem(id4);
         obj.playlist.play();
+    }
+    function PTZControl(funcName){
+        brand = arr[id];
+        //alert(brand);
+        var res = null;
+        switch(funcName){
+            case "PTZLeftUp":
+                res = StartTask_PTZ(25,brand);	//云台：左上
+                break;
+            case "PTZUp":
+                res = StartTask_PTZ(21,brand);	//云台：上
+                break;
+            case "PTZRightUp":
+                res = StartTask_PTZ(26,brand);	//云台：右上
+                break;
+            case "PTZLeft":
+                res = StartTask_PTZ(23,brand);	//云台：左
+                break;
+            case "PTZAuto":
+                res = StartTask_PTZ(29,brand);	//云台：自转
+                break;
+            case "PTZRight":
+                res = StartTask_PTZ(24,brand);	//云台：右
+                break;
+            case "PTZLeftDown":
+                res = StartTask_PTZ(27,brand);	//云台：左下
+                break;
+            case "PTZDown":
+                res = StartTask_PTZ(22,brand);	//云台：下
+                break;
+            case "PTZRightDown":
+                res = StartTask_PTZ(28,brand);	//云台：右下
+                break;
+            case "PTZStop":
+                res = StartTask_PTZ(1,brand);	//云台：停止
+                break;
+            case "PTZAddTimes":
+                res = StartTask_PTZ(11,brand);	//云台：焦距+
+                break;
+            case "PTZMinusTimes":
+                res = StartTask_PTZ(12,brand);	//云台：焦距-
+                break;
+            case "PTZFarFocus":
+                res = StartTask_PTZ(13,brand);	//云台：焦点+
+                break;
+            case "PTZNearFocus":
+                res = StartTask_PTZ(14,brand);	//云台：焦点-
+                break;
+            case "PTZLargeAperture":
+                res = StartTask_PTZ(15,brand);	//云台：光圈+
+                break;
+            case "PTZSmallAperture":
+                res = StartTask_PTZ(16,brand);	//云台：光圈-
+                break;
+    }
+}
+    function StartTask_PTZ(ptz,brand) {
+        $.ajax({
+            url: "http://www.qs1.com/home/run/ptz?method=GetDateTime&datetime=" +new Date().getTime()+"&ptz="+ptz+"&brand="+brand,  // 这里改成你要执行的php便可,
+            success: function(data){
+                console.log(data);
+            }
+        });
+        //alert(url+user+pwd+profiletoken);
 
     }
+
 
 </script>
 </html>

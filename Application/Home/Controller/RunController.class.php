@@ -176,6 +176,8 @@ class RunController extends Controller
                     $y),
                 $post_string);
         }else if($b == 'haikang'){
+            $x = $x*2;
+            $y = $y*2;
             $post_string='<?xml version="1.0" encoding="utf-8"?>
                         <s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:tptz="http://www.onvif.org/ver20/ptz/wsdl" xmlns:tt="http://www.onvif.org/ver10/schema">
                           <s:Header>

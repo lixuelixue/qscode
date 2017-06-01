@@ -121,7 +121,7 @@
 
         <!-- Unnamed (图片) -->
         <div id="u50" class="ax_default _图片1">
-            <img id="u50_img" class="img " src="__PUBLIC__/home/images/run/u50.svg"/>
+            <a href="/home/run/video"><img id="u50_img" class="img " src="__PUBLIC__/home/images/run/u50.svg"/></a>
             <!-- Unnamed () -->
             <div id="u51" class="text" style="display: none; visibility: hidden">
                 <p><span></span></p>
@@ -215,8 +215,8 @@
 
     <div id="u68" class="ax_default droplist" >
         <select  id="point" name="point" style="width:206px;height:22px" onchange="show_sub(this.options[this.options.selectedIndex].value)">
-            <option value="大华">大华</option>
-            <option value="海康">海康</option>
+            <option value="大华">大华1</option>
+            <option value="海康">海康1</option>
         </select>
     </div>
 
@@ -439,7 +439,7 @@
                 <div id="u114" class="ax_default image">
                     <!--<img id="u114_img" class="img " src="__PUBLIC__/home/images/run/u114.jpg"/>-->
                     <object classid="clsid:9BE31822-FDAD-461B-AD51-BE1D1C159921" id="obj" height="100%" width="100%" name="ocx" >
-                        <param  id="rtsp" name="mrl" value="rtsp://192.168.1.108:554/cam/realmonitor?channel=1&subtype=0&unicast=true&proto=Onvif">
+                        <param name="mrl" value="rtsp://192.168.1.108:554/cam/realmonitor?channel=1&subtype=0&unicast=true&proto=Onvif">
                         <param name="volume" value="50">
                         <!--<param name="autoplay" value="true"> -->
                         <param name="control" value="false">
@@ -674,9 +674,9 @@
     </div>
 </div>
 <script>
-    console.log('js输出成功')
+    //console.log('js输出成功')
     var obj = document.getElementById('obj');
-    var parma = document.getElementById('rtsp');
+    //var parma = document.getElementById('rtsp');
     //alert (obj);
     if(obj.object == null){
         alert('没有安装插件，请下载');
@@ -685,9 +685,9 @@
     else{
     }
 
-    var select = document.getElementById('point');
+    /*var select = document.getElementById('point');
     var index = select.selectedIndex;
-    var value = select.options[index].value;
+    var value = select.options[index].value;*/
 //    console.log(value);
 //    console.log('这是'+parma.value);
 

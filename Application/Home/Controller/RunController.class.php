@@ -92,7 +92,7 @@ class RunController extends Controller
     }
     protected function stopptz($b,$user,$pwd,$url,$profiletoken){
         if($b == 'dahua'){
-            $timestamp=time();
+            /*$timestamp=time();
             $REQ=$this->_passwordDigest($user,$pwd,date('Y-m-d\TH:i:s\Z',$timestamp));
             $post_string='<?xml version="1.0" encoding="utf-8"?>
                 <s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:tptz="http://www.onvif.org/ver20/ptz/wsdl" xmlns:tt="http://www.onvif.org/ver10/schema">
@@ -124,7 +124,27 @@ class RunController extends Controller
                     $REQ['NONCE'],
                     $REQ['TIMESTAMP'],
                     $profiletoken),
-                $post_string);
+                $post_string);*/
+            $post_string='<?xml version="1.0" encoding="utf-8"?>
+            <s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:tptz="http://www.onvif.org/ver20/ptz/wsdl" xmlns:tt="http://www.onvif.org/ver10/schema">
+              <s:Header>
+                <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+                  <wsse:UsernameToken>
+                    <wsse:Username>admin</wsse:Username>
+                    <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">zYgjCi4L6NIzONzDjmd9pxiyNs4=</wsse:Password>
+                    <wsse:Nonce>/LJ8Spd5ZYIqRWz6mtnVKA==</wsse:Nonce>
+                    <wsu:Created>2017-06-06T08:38:35Z</wsu:Created>
+                  </wsse:UsernameToken>
+                </wsse:Security>
+              </s:Header>
+              <s:Body>
+                <tptz:Stop>
+                  <tptz:ProfileToken>MediaProfile000</tptz:ProfileToken>
+                  <tptz:PanTilt>true</tptz:PanTilt>
+                  <tptz:Zoom>true</tptz:Zoom>
+                </tptz:Stop>
+              </s:Body>
+            </s:Envelope>';
         }else if($b == 'haikang'){
             $post_string='<?xml version="1.0" encoding="utf-8"?>
             <s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:tptz="http://www.onvif.org/ver20/ptz/wsdl" xmlns:tt="http://www.onvif.org/ver10/schema">
@@ -155,7 +175,7 @@ class RunController extends Controller
     protected function doptz($b,$user,$pwd,$url,$profiletoken,$x,$y){
 
         if($b == 'dahua'){
-            $post_string='<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope"><s:Header><Security s:mustUnderstand="1" xmlns="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"><UsernameToken><Username>%%USERNAME%%</Username><Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">%%PASSWORD%%</Password><Nonce EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">%%NONCE%%</Nonce><Created xmlns="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">%%CREATED%%</Created></UsernameToken></Security></s:Header><s:Body xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="https://www.w3.org/2009/XMLSchema/XMLSchema.xsd"><ContinuousMove xmlns="http://www.onvif.org/ver20/ptz/wsdl"><ProfileToken>%%PROFILETOKEN%%</ProfileToken><Velocity><PanTilt x="%%VELOCITYPANTILTX%%" y="%%VELOCITYPANTILTY%%" space="http://www.onvif.org/ver10/tptz/PanTiltSpaces/VelocityGenericSpace" xmlns="http://www.onvif.org/ver10/schema"/></Velocity></ContinuousMove></s:Body></s:Envelope>';
+            /*$post_string='<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope"><s:Header><Security s:mustUnderstand="1" xmlns="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"><UsernameToken><Username>%%USERNAME%%</Username><Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">%%PASSWORD%%</Password><Nonce EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">%%NONCE%%</Nonce><Created xmlns="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">%%CREATED%%</Created></UsernameToken></Security></s:Header><s:Body xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="https://www.w3.org/2009/XMLSchema/XMLSchema.xsd"><ContinuousMove xmlns="http://www.onvif.org/ver20/ptz/wsdl"><ProfileToken>%%PROFILETOKEN%%</ProfileToken><Velocity><PanTilt x="%%VELOCITYPANTILTX%%" y="%%VELOCITYPANTILTY%%" space="http://www.onvif.org/ver10/tptz/PanTiltSpaces/VelocityGenericSpace" xmlns="http://www.onvif.org/ver10/schema"/></Velocity></ContinuousMove></s:Body></s:Envelope>';
             $timestamp=time();
             $REQ=$this->_passwordDigest($user,$pwd,date('Y-m-d\TH:i:s\Z',$timestamp));
             //var_dump($REQ);
@@ -174,7 +194,39 @@ class RunController extends Controller
                     $profiletoken,
                     $x,
                     $y),
+                $post_string);*/
+            $post_string='<?xml version="1.0" encoding="utf-8"?>
+                        <s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:tptz="http://www.onvif.org/ver20/ptz/wsdl" xmlns:tt="http://www.onvif.org/ver10/schema">
+                          <s:Header>
+                            <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+                              <wsse:UsernameToken>
+                                <wsse:Username>admin</wsse:Username>
+                                <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">sckX6/eJ8LRwvmio8cYSpoxXtzw=</wsse:Password>
+                                <wsse:Nonce>PjTzm/0GhyVK+cSTss74+A==</wsse:Nonce>
+                                <wsu:Created>2017-06-06T08:32:54Z</wsu:Created>
+                              </wsse:UsernameToken>
+                            </wsse:Security>
+                          </s:Header>
+                          <s:Body>
+                            <tptz:ContinuousMove>
+                              <tptz:ProfileToken>%%PROFILETOKEN%%</tptz:ProfileToken>
+                              <tptz:Velocity>
+                                <tt:PanTilt x="%%VELOCITYPANTILTX%%" y="%%VELOCITYPANTILTY%%" />
+                                <tt:Zoom x="0" />
+                              </tptz:Velocity>
+                            </tptz:ContinuousMove>
+                          </s:Body>
+                        </s:Envelope>';
+            $post_string=str_replace(array(
+                "%%PROFILETOKEN%%",
+                "%%VELOCITYPANTILTX%%",
+                "%%VELOCITYPANTILTY%%"),
+                array(
+                    $profiletoken,
+                    $x,
+                    $y),
                 $post_string);
+
         }else if($b == 'haikang'){
             $x = $x*2;
             $y = $y*2;

@@ -11,11 +11,37 @@
     <link href="__PUBLIC__/home/files/video/styles.css" type="text/css" rel="stylesheet"/>
     <script src="__PUBLIC__/home/resources/scripts/jquery-1.7.1.min.js"></script>
     <script src="__PUBLIC__/home/resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
+    <script src="__PUBLIC__/home/resources/scripts/axure/axQuery.js"></script>
+    <script src="__PUBLIC__/home/resources/scripts/axure/globals.js"></script>
     <script src="__PUBLIC__/home/resources/scripts/axutils.js"></script>
+    <script src="__PUBLIC__/home/resources/scripts/axure/annotation.js"></script>
+    <script src="__PUBLIC__/home/resources/scripts/axure/axQuery.std.js"></script>
+    <script src="__PUBLIC__/home/resources/scripts/axure/doc.js"></script>
     <script src="__PUBLIC__/home/data/document.js"></script>
     <script src="__PUBLIC__/home/resources/scripts/messagecenter.js"></script>
-    <script src="__PUBLIC__/home/files/video/data.js"></script>
-    <script src="__PUBLIC__/home/js/jquery-3.2.1.js"></script>
+    <script src="__PUBLIC__/home/resources/scripts/axure/events.js"></script>
+    <script src="__PUBLIC__/home/resources/scripts/axure/recording.js"></script>
+    <script src="__PUBLIC__/home/resources/scripts/axure/action.js"></script>
+    <script src="__PUBLIC__/home/resources/scripts/axure/expr.js"></script>
+    <script src="__PUBLIC__/home/resources/scripts/axure/geometry.js"></script>
+    <script src="__PUBLIC__/home/resources/scripts/axure/flyout.js"></script>
+    <script src="__PUBLIC__/home/resources/scripts/axure/ie.js"></script>
+    <script src="__PUBLIC__/home/resources/scripts/axure/model.js"></script>
+    <script src="__PUBLIC__/home/resources/scripts/axure/repeater.js"></script>
+    <script src="__PUBLIC__/home/resources/scripts/axure/sto.js"></script>
+    <script src="__PUBLIC__/home/resources/scripts/axure/utils.temp.js"></script>
+    <script src="__PUBLIC__/home/resources/scripts/axure/variables.js"></script>
+    <script src="__PUBLIC__/home/resources/scripts/axure/drag.js"></script>
+    <script src="__PUBLIC__/home/resources/scripts/axure/move.js"></script>
+    <script src="__PUBLIC__/home/resources/scripts/axure/adaptive.js"></script>
+    <script src="__PUBLIC__/home/resources/scripts/axure/tree.js"></script>
+    <script src="__PUBLIC__/home/resources/scripts/axure/init.temp.js"></script>
+    <script src="__PUBLIC__/home/files/vids/scripts/axure/visibility.js"></script>
+    <script src="__PUBLIC__/home/resources/scripts/axure/style.js"></script>
+    <script src="__PUBLIC__/home/resourceeo/data.js"></script>
+    <script src="__PUBLIC__/home//scripts/axure/viewer.js"></script>
+    <script src="__PUBLIC__/home/resourceresources/scripts/axure/legacy.js"></script>
+    <script src="__PUBLIC__/home/resourcess/scripts/axure/math.js"></script>
     <style type="text/css">
         .divImgIn {
             text-align:center;
@@ -24,7 +50,53 @@
         .divImgOut{
             background-color: #8f949a
         }
+
+        .window{
+            width:100%;
+            height:100%;
+            margin: auto;
+            position: absolute;
+            z-index:3;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: block;
+            background-color: black;
+        }
+        #iframe{
+            background-image: url('__PUBLIC__/home/images/video/close.png');
+            background-size: 100%;
+            background-repeat: no-repeat;
+            display: block；
+
+        }
+        .del{
+            width:15px;
+            height: 15px;
+            position: absolute;
+            z-index:3;
+            top: 1px;
+            right: 1px;
+            background-color: #999999;
+            display: none;
+        }
+        .ptz{
+            background-image: url('__PUBLIC__/home/images/video/ptz.png');
+            background-size: 100%;
+            background-repeat: no-repeat;
+            width:15px;
+            height: 15px;
+            position: absolute;
+            z-index:3;
+            top: 17px;
+            right: 1px;
+            background-color:#999999;
+            display: none;
+        }
+
     </style>
+
 </head>
 <body>
 <div id="base" class="">
@@ -344,58 +416,58 @@
 
 
         <!--<table width="100%" style="border: thin solid #C0C0C0;padding-top: 40px;">-->
-            <!--<tr>-->
-                <!--<td width="20%"><input type="button" value="预置点 " onClick="GetPt()" /></td>-->
-                <!--<td width="30%">-->
-                    <!--&lt;!&ndash;-->
-                    <!--<select style="width:130px" id="SelectGetpt">-->
-                        <!--<option value = "1">1</option>-->
-                        <!--<option value = "2">2</option>-->
-                        <!--<option value = "3">3</option>-->
-                        <!--<option value = "4">4</option>-->
-                        <!--<option value = "5">5</option>-->
-                        <!--<option value = "6">6</option>-->
-                        <!--<option value = "7">7</option>-->
-                        <!--<option value = "8">8</option>-->
-                        <!--<option value = "9">9</option>-->
-                        <!--<option value = "10">10</option>-->
-                        <!--<option value = "11">11</option>-->
-                        <!--<option value = "12">12</option>-->
-                        <!--<option value = "13">13</option>-->
-                        <!--<option value = "14">14</option>-->
-                        <!--<option value = "15">15</option>-->
-                        <!--<option value = "16">16</option>-->
-                    <!--</select>-->
-                        <!--&ndash;&gt;-->
-                    <!--<input type="text"  value="1"/>-->
-                <!--</td>-->
-            <!--</tr>-->
-            <!--<tr>-->
-                <!--<td width="20%"><input type="button" value="预置点 " onClick="SetPt()" /></td>-->
-                <!--<td width="30%">-->
-                    <!--&lt;!&ndash;-->
-                    <!--<select style="width:130px" id="SelectSetpt">-->
-                        <!--<option value = "1">1</option>-->
-                        <!--<option value = "2">2</option>-->
-                        <!--<option value = "3">3</option>-->
-                        <!--<option value = "4">4</option>-->
-                        <!--<option value = "5">5</option>-->
-                        <!--<option value = "6">6</option>-->
-                        <!--<option value = "7">7</option>-->
-                        <!--<option value = "8">8</option>-->
-                        <!--<option value = "9">9</option>-->
-                        <!--<option value = "10">10</option>-->
-                        <!--<option value = "11">11</option>-->
-                        <!--<option value = "12">12</option>-->
-                        <!--<option value = "13">13</option>-->
-                        <!--<option value = "14">14</option>-->
-                        <!--<option value = "15">15</option>-->
-                        <!--<option value = "16">16</option>-->
-                    <!--</select>-->
-                    <!--&ndash;&gt;-->
-                    <!--<input type="text" id="setPreset" value="1"/>-->
-                <!--</td>-->
-            <!--</tr>-->
+        <!--<tr>-->
+        <!--<td width="20%"><input type="button" value="预置点 " onClick="GetPt()" /></td>-->
+        <!--<td width="30%">-->
+        <!--&lt;!&ndash;-->
+        <!--<select style="width:130px" id="SelectGetpt">-->
+        <!--<option value = "1">1</option>-->
+        <!--<option value = "2">2</option>-->
+        <!--<option value = "3">3</option>-->
+        <!--<option value = "4">4</option>-->
+        <!--<option value = "5">5</option>-->
+        <!--<option value = "6">6</option>-->
+        <!--<option value = "7">7</option>-->
+        <!--<option value = "8">8</option>-->
+        <!--<option value = "9">9</option>-->
+        <!--<option value = "10">10</option>-->
+        <!--<option value = "11">11</option>-->
+        <!--<option value = "12">12</option>-->
+        <!--<option value = "13">13</option>-->
+        <!--<option value = "14">14</option>-->
+        <!--<option value = "15">15</option>-->
+        <!--<option value = "16">16</option>-->
+        <!--</select>-->
+        <!--&ndash;&gt;-->
+        <!--<input type="text"  value="1"/>-->
+        <!--</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+        <!--<td width="20%"><input type="button" value="预置点 " onClick="SetPt()" /></td>-->
+        <!--<td width="30%">-->
+        <!--&lt;!&ndash;-->
+        <!--<select style="width:130px" id="SelectSetpt">-->
+        <!--<option value = "1">1</option>-->
+        <!--<option value = "2">2</option>-->
+        <!--<option value = "3">3</option>-->
+        <!--<option value = "4">4</option>-->
+        <!--<option value = "5">5</option>-->
+        <!--<option value = "6">6</option>-->
+        <!--<option value = "7">7</option>-->
+        <!--<option value = "8">8</option>-->
+        <!--<option value = "9">9</option>-->
+        <!--<option value = "10">10</option>-->
+        <!--<option value = "11">11</option>-->
+        <!--<option value = "12">12</option>-->
+        <!--<option value = "13">13</option>-->
+        <!--<option value = "14">14</option>-->
+        <!--<option value = "15">15</option>-->
+        <!--<option value = "16">16</option>-->
+        <!--</select>-->
+        <!--&ndash;&gt;-->
+        <!--<input type="text" id="setPreset" value="1"/>-->
+        <!--</td>-->
+        <!--</tr>-->
         <!--</table>-->
         <br />
 
@@ -412,28 +484,28 @@
 
         <!-- Unnamed (多行文本框) -->
         <!--<div id="u217" class="ax_default text_area">-->
-          <!--<textarea id="u217_input">-->
+        <!--<textarea id="u217_input">-->
 
 
-<!--</textarea>-->
+        <!--</textarea>-->
         <!--</div>-->
 
         <!-- Unnamed (矩形) -->
         <!--<div id="u218" class="ax_default box_1">-->
-            <!--<div id="u218_div" class=""></div>-->
-            <!--&lt;!&ndash; Unnamed () &ndash;&gt;-->
-            <!--<div id="u219" class="text" style="visibility: visible;">-->
-                <!--<p><span>巡航</span></p>-->
-            <!--</div>-->
+        <!--<div id="u218_div" class=""></div>-->
+        <!--&lt;!&ndash; Unnamed () &ndash;&gt;-->
+        <!--<div id="u219" class="text" style="visibility: visible;">-->
+        <!--<p><span>巡航</span></p>-->
+        <!--</div>-->
         <!--</div>-->
 
         <!-- Unnamed (矩形) -->
         <!--<div id="u220" class="ax_default box_1">-->
-            <!--<div id="u220_div" class=""></div>-->
-            <!--&lt;!&ndash; Unnamed () &ndash;&gt;-->
-            <!--<div id="u221" class="text" style="visibility: visible;">-->
-                <!--<p><span>预置位</span></p>-->
-            <!--</div>-->
+        <!--<div id="u220_div" class=""></div>-->
+        <!--&lt;!&ndash; Unnamed () &ndash;&gt;-->
+        <!--<div id="u221" class="text" style="visibility: visible;">-->
+        <!--<p><span>预置位</span></p>-->
+        <!--</div>-->
         <!--</div>-->
     </div>
 
@@ -465,11 +537,11 @@
     <!--监控点设置开始-->
     <!-- Unnamed (矩形) -->
     <!--<div id="u226" class="ax_default label" >-->
-        <!--<div id="u226_div" class=""></div>-->
-        <!--&lt;!&ndash; Unnamed () &ndash;&gt;-->
-        <!--<div id="u227" class="text"  id="monitoringpoint">-->
-            <!--<p><span>大华</span></p>-->
-        <!--</div>-->
+    <!--<div id="u226_div" class=""></div>-->
+    <!--&lt;!&ndash; Unnamed () &ndash;&gt;-->
+    <!--<div id="u227" class="text"  id="monitoringpoint">-->
+    <!--<p><span>大华</span></p>-->
+    <!--</div>-->
     <!--</div>-->
 
     <!--&lt;!&ndash; Unnamed (矩形) &ndash;&gt;-->
@@ -477,30 +549,17 @@
         <div id="u228_div" class=""></div>
         <!-- Unnamed () -->
         <!--<div id="u229" class="text"  id="monitoringpoint">-->
-            <!--<p><span>海康</span></p>-->
+        <!--<p><span>海康</span></p>-->
         <!--</div>-->
 
-        <div >
-            <div class="divImgIn" name="大华" ondblclick="change_one()">大华</div>
-            <div class="divImgIn" name="海康" ondblclick="change_two()">海康</div>
+        <div>
+            <a><div class="divImgIn" name="大华" ondblclick="change_one()">大华</div></a>
+            <a><div class="divImgIn" name="海康" ondblclick="change_two()">海康</div></a>
         </div>
 
     </div>
 
-
-
-
-
-
-
     <!--监控点设置结束-->
-
-
-
-
-
-
-
 
 
     <!-- Unnamed (矩形) -->
@@ -716,16 +775,6 @@
     </div>
 
 
-
-
-
-
-
-
-
-
-
-
     <!--视频播放区域开始-->
     <!-- Unnamed (图片) -->
     <!--边框样式设置：style="border:1px solid F60;"-->
@@ -733,104 +782,227 @@
 
     <!--右下-->
 
-    <div style="background-color: #8f949a;" id="u286" class="ax_defaultimage"  onmousedown="gain_id1()">
-        <object classid="clsid:9BE31822-FDAD-461B-AD51-BE1D1C159921"
-                width="80%"
-                height="100%"
-                id="0"
-                events="True"
-                >
-            <param name="wmode" value="transparent">
-            <param id="urla" name="MRL" value=""/>
-            <param name="ShowDisplay" value="True" />
-            <param name="AutoLoop" value="true" />
-            <param name="AutoPlay" value="true" />
-            <param name="Volume" value="50" />
-            <param name="toolbar" value="false" />
-            <param name="StartTime" value="0" />
-        </object>
+        <div style="z-index: 2; position: relative" id="u286" class="ax_defaultimage">
 
-    </div>
+            <!--<div id="test"></div>-->
+            <div id="log_window1" class="window">
+                <a href="javascript:gain_id1()">
+                    <iframe frameBorder="0" marginHeight="0" marginWidth="0" allowtransparency="true"
+                            style="position:absolute;
+                        visibility:inherit; top:0px;left:0px;width:100%; height:100%; filter:alpha(opacity=0); background-color: #AAAAAA">
+                    </iframe>
+                </a>
+            </div>
 
 
+            <div id="del1" class="del">
+                <a href="javascript:closeVideo1()">
+                    <iframe  frameBorder="0" marginHeight="0" marginWidth="0" allowtransparency="true" id="iframe"
+                             style=" float: right; top:0px;left:10px;width:100%; height:100%">
+                    </iframe>
+                </a>
+            </div>
 
 
 
-    <!--右上-->
-    <!-- Unnamed (图片) -->
-    <div  style="background-color: #8f949a;" id="u288" class="ax_defaultimage" onmousedown="gain_id2()">
+            <!--云台控制-->
+            <div id="ptz1" class="ptz">
+                <a href="javascript:gain_id1()">
+                    <iframe  frameBorder="0" marginHeight="0" marginWidth="0" allowtransparency="true" id="ifrPtz"
+                             style=" float: right; top:0px;left:10px;width:100%; height:100%">
 
-        <object classid="clsid:9BE31822-FDAD-461B-AD51-BE1D1C159921"
-                width="80%"
-                height="100%"
-                id="1"
-                events="True"
-        >
-            <param name="wmode" value="transparent">
-            <param id="urlb" name="MRL" value="" />
-            <param name="ShowDisplay" value="True" />
-            <param name="AutoLoop" value="true" />
-            <param name="AutoPlay" value="true" />
-            <param name="Volume" value="50" />
-            <param name="toolbar" value="false" />
-            <param name="StartTime" value="0" />
-        </object>
+                    </iframe>
+                </a>
+            </div>
 
-        <!-- Unnamed () -->
-        <!--<div id="u289" class="text" style="display: none; visibility: hidden">-->
+
+            <object classid="clsid:9BE31822-FDAD-461B-AD51-BE1D1C159921"
+                    width="100%"
+                    height="100%"
+                    id="0"
+                    events="True"
+                    style="z-index: 1; position: absolute;top: 0px;left: 0px"
+            >
+
+                <param name="wmode" value="transparent">
+                <param id="urla" name="MRL" value=""/>
+                <param name="ShowDisplay" value="True" />
+                <param name="AutoLoop" value="true" />
+                <param name="AutoPlay" value="true" />
+                <param name="Volume" value="50" />
+                <param name="toolbar" value="false" />
+                <param name="StartTime" value="0" />
+                <param name="text" value="这是文本"/>
+                <param name="color" value="black"/>
+                <param name="aspectRatio" value="16:9">
+                <!--<param name="allowfullscreen" value = "false"/>-->
+            </object>
+        </div>
+
+
+
+
+        <!--右上-->
+        <!-- Unnamed (图片) -->
+        <div  style="background-color: #8f949a; height: " id="u288" class="ax_defaultimage" onmousedown="gain_id2()">
+
+            <div id="log_window2" class="window">
+                <a href="javascript:gain_id2()">
+                    <iframe frameBorder="0" marginHeight="0" marginWidth="0" style="background-color: #AAAAAA;
+        position:absolute; visibility:inherit; top:0px;left:0px;width:100%; height:100%;z-index:-1; filter:alpha(opacity=0);">
+                    </iframe>
+                </a>
+            </div>
+
+            <div id="del2" class="del">
+                <a href="javascript:closeVideo2()">
+                    <iframe  frameBorder="0" marginHeight="0" marginWidth="0" allowtransparency="true" id="iframe"
+                             style=" float: right; top:0px;left:10px;width:100%; height:100%">
+
+                    </iframe>
+                </a>
+            </div>
+
+
+            <div id="ptz2" class="ptz">
+                <a href="javascript:gain_id2()">
+                    <iframe  frameBorder="0" marginHeight="0" marginWidth="0" allowtransparency="true" id="ifrPtz"
+                             style=" float: right; top:0px;left:10px;width:100%; height:100%">
+
+                    </iframe>
+                </a>
+            </div>
+
+            <object classid="clsid:9BE31822-FDAD-461B-AD51-BE1D1C159921"
+                    width="100%"
+                    height="100%"
+                    id="1"
+                    events="True"
+            >
+                <param name="wmode" value="transparent">
+                <param id="urlb" name="MRL" value="" />
+                <param name="ShowDisplay" value="True" />
+                <param name="AutoLoop" value="true" />
+                <param name="AutoPlay" value="true" />
+                <param name="Volume" value="50" />
+                <param name="toolbar" value="false" />
+                <param name="StartTime" value="0" />
+            </object>
+
+            <!-- Unnamed () -->
+            <!--<div id="u289" class="text" style="display: none; visibility: hidden">-->
             <!--<p><span></span></p>-->
-        <!--</div>-->
-    </div>
+            <!--</div>-->
+        </div>
 
-    <!-- Unnamed (图片) -->
-    <div style="background-color: #8f949a;" id="u290" class="ax_defaultimage" onmousedown="gain_id3()">
-        <!--<img id="u290_img" class="img " src="__PUBLIC__/home/images/video/u290.jpg"/>-->
-        <object classid="clsid:9BE31822-FDAD-461B-AD51-BE1D1C159921"
-                width="80%"
-                height="100%"
-                id="2"
-                events="True"
-                >
-            <param name="wmode" value="transparent">
-            <param id="urlc" name="MRL" value="" />
-            <param name="ShowDisplay" value="True" />
-            <param name="AutoLoop" value="true" />
-            <param name="AutoPlay" value="true" />
-            <param name="Volume" value="50" />
-            <param name="toolbar" value="false" />
-            <param name="StartTime" value="0" />
-        </object>
-        <!-- Unnamed () -->
-        <!--<div id="u291" class="text" style="display: none; visibility: hidden">-->
+        <!-- Unnamed (图片) -->
+        <div style="background-color: #8f949a;" id="u290" class="ax_defaultimage" onmousedown="gain_id3()">
+            <!--<img id="u290_img" class="img " src="__PUBLIC__/home/images/video/u290.jpg"/>-->
+
+            <div id="log_window3" class="window">
+                <a href="javascript:gain_id3()">
+                    <iframe frameBorder="0" marginHeight="0" marginWidth="0" style="background-color: #AAAAAA;
+        position:absolute; visibility:inherit; top:0px;left:0px;width:100%; height:100%;z-index:-1; filter:alpha(opacity=0);">
+                    </iframe>
+                </a>
+            </div>
+
+            <div id="del3" class="del">
+                <a href="javascript:closeVideo3()">
+                    <iframe  frameBorder="0" marginHeight="0" marginWidth="0" allowtransparency="true" id="iframe"
+                             style=" float: right; top:0px;left:10px;width:100%; height:100%">
+
+                    </iframe>
+                </a>
+            </div>
+
+            <div id="ptz3" class="ptz">
+                <a href="javascript:gain_id3()">
+                    <iframe  frameBorder="0" marginHeight="0" marginWidth="0" allowtransparency="true" id="ifrPtz"
+                             style=" float: right; top:0px;left:10px;width:100%; height:100%">
+
+                    </iframe>
+                </a>
+            </div>
+
+            <object classid="clsid:9BE31822-FDAD-461B-AD51-BE1D1C159921"
+                    width="100%"
+                    height="100%"
+                    id="2"
+                    events="True"
+            >
+                <param name="wmode" value="transparent">
+                <param id="urlc" name="MRL" value="" />
+                <param name="ShowDisplay" value="True" />
+                <param name="AutoLoop" value="true" />
+                <param name="AutoPlay" value="true" />
+                <param name="Volume" value="50" />
+                <param name="toolbar" value="false" />
+                <param name="StartTime" value="0" />
+            </object>
+            <!-- Unnamed () -->
+            <!--<div id="u291" class="text" style="display: none; visibility: hidden">-->
             <!--<p><span></span></p>-->
-        <!--</div>-->
-    </div>
+            <!--</div>-->
+        </div>
 
-    <!-- Unnamed (图片) -->
-    <div style="background-color: #8f949a;" id="u292" class="ax_defaultimage" onmousedown="gain_id4()">
-        <object classid="clsid:9BE31822-FDAD-461B-AD51-BE1D1C159921"
-                width="80%"
-                height="100%"
-                id="3"
-                events="True"
+        <!-- Unnamed (图片) -->
+        <div style="background-color: #8f949a;" id="u292" class="ax_defaultimage" onmousedown="gain_id4()">
 
-                >
-            <param name="wmode" value="transparent">
-            <param id="urld" name="MRL" value="" />
-            <param name="ShowDisplay" value="True" />
-            <param name="AutoLoop" value="true" />
-            <param name="id" value="" />
-            <param name="AutoPlay" value="true" />
-            <param name="Volume" v alue="50" />
-            <param name="toolbar" value="false" />
-            <param name="StartTime" value="0" />
-        </object>
-        <!-- Unnamed () -->
-        <!--<div id="u293" class="text" style="display: none; visibility: hidden">-->
+            <div id="log_window4" class="window">
+                <a href="javascript:gain_id4()">
+                    <iframe frameBorder="0" marginHeight="0" marginWidth="0" style="background-color: #AAAAAA;
+        position:absolute; visibility:inherit; top:0px;left:0px;width:100%; height:100%;z-index:-1; filter:alpha(opacity=0);">
+                    </iframe>
+                </a>
+            </div>
+
+            <div id="del4" class="del">
+                <a href="javascript:closeVideo4()">
+                    <iframe  frameBorder="0" marginHeight="0" marginWidth="0" allowtransparency="true" id="iframe"
+                             style=" float: right; top:0px;left:10px;width:100%; height:100%">
+
+                    </iframe>
+                </a>
+            </div>
+
+
+            <div id="ptz4" class="ptz">
+                <a href="javascript:gain_id4()">
+                    <iframe  frameBorder="0" marginHeight="0" marginWidth="0" allowtransparency="true" id="ifrPtz"
+                             style=" float: right; top:0px;left:10px;width:100%; height:100%">
+
+                    </iframe>
+                </a>
+            </div>
+
+
+
+            <object classid="clsid:9BE31822-FDAD-461B-AD51-BE1D1C159921"
+                    width="100%"
+                    height="100%"
+                    id="3"
+                    events="True"
+
+            >
+                <param name="wmode" value="transparent">
+                <param id="urld" name="MRL" value="" />
+                <param name="ShowDisplay" value="True" />
+                <param name="AutoLoop" value="true" />
+                <param name="id" value="" />
+                <param name="AutoPlay" value="true" />
+                <param name="Volume" value="50" />
+                <param name="toolbar" value="false" />
+                <param name="StartTime" value="0" />
+            </object>
+            <!-- Unnamed () -->
+            <!--<div id="u293" class="text" style="display: none; visibility: hidden">-->
             <!--<p><span></span></p>-->
-        <!--</div>-->
-    </div>
-    <!--视频播放区域结束-->
+            <!--</div>-->
+        </div>
+        <!--视频播放区域结束-->
+
+
 
 
 
@@ -905,7 +1077,6 @@
             <!--<div id="u309" class="ax_default">
                 <div id="u309_state0" class="panel_state" data-label="State1">
                     <div id="u309_state0_content" class="panel_state_content">
-
                         &lt;!&ndash; Unnamed (热区) &ndash;&gt;
                         <div id="u310" class="ax_default">
                         </div>
@@ -1060,71 +1231,116 @@
 </div>
 </body>
 <script>
-
-//    $(function() {
-//        // 为 class = divImgIn 的控件绑定 click 事件
-//        $(".divImgIn").click(function() {
-//            // 使用 toggleClass ，如果 class 中没有 divImgOut 则附加上，有则减掉
-//            $(this).toggleClass("divImgOut");
-//
-//        })
-//    })
-
-
+    //    $(function() {
+    //        // 为 class = divImgIn 的控件绑定 click 事件
+    //        $(".divImgIn").click(function() {
+    //            // 使用 toggleClass ，如果 class 中没有 divImgOut 则附加上，有则减掉
+    //            $(this).toggleClass("divImgOut");
+    //
+    //        })
+    //    })
     var id;
     var brand;
     var arr = new Array(4);
-
     // 获取视频播放位置的object的id
     function gain_id1() {
         id = "0";
+        console.log(id);
+        document.getElementById('log_window1').style.border = '1px solid red';
+        document.getElementById('log_window2').style.border = '0px solid red';
+        document.getElementById('log_window3').style.border = '0px solid red';
+        document.getElementById('log_window4').style.border = '0px solid red';
     }
     function gain_id2() {
         id = "1";
+        console.log(id);
+        document.getElementById('log_window2').style.border = '1px solid red';
+        document.getElementById('log_window1').style.border = '0px solid red';
+        document.getElementById('log_window3').style.border = '0px solid red';
+        document.getElementById('log_window4').style.border = '0px solid red';
     }
     function gain_id3() {
         id = "2";
+        console.log(id);
+        document.getElementById('log_window3').style.border = '1px solid red';
+        document.getElementById('log_window2').style.border = '0px solid red';
+        document.getElementById('log_window1').style.border = '0px solid red';
+        document.getElementById('log_window4').style.border = '0px solid red';
     }
     function gain_id4() {
         id = "3";
+        console.log(id);
+        document.getElementById('log_window4').style.border = '1px solid red';
+        document.getElementById('log_window2').style.border = '0px solid red';
+        document.getElementById('log_window3').style.border = '0px solid red';
+        document.getElementById('log_window1').style.border = '0px solid red';
     }
-
-
     function change_one() {
-        var obj = document.getElementById(id);
-        if(id == '0'){
+        if(id == "0"){
             arr[0] = "dahua";
-        }else if(id == '1'){
+            var l = document.getElementById("log_window1");
+            var del = document.getElementById('del1');
+            var ptz = document.getElementById('ptz1');
+        }else if(id == "1"){
             arr[1] = 'dahua';
-        }else if(id == '2'){
+            var l = document.getElementById("log_window2");
+            var del = document.getElementById('del2');
+            var ptz = document.getElementById('ptz2');
+        }else if(id == "2"){
             arr[2] = 'dahua';
-        }else if(id == '3'){
+            var l = document.getElementById("log_window3");
+            var del = document.getElementById('del3');
+            var ptz = document.getElementById('ptz3');
+        }else if(id == "3"){
             arr[3] = 'dahua';
+            var l = document.getElementById("log_window4");
+            var del = document.getElementById('del4');
+            var ptz = document.getElementById('ptz4');
         }
 
-        //arr.push(id+' dahua') ;f
+        l.style.display = "none";
+        del.style.display = 'block';
+        ptz.style.display = 'block';
+        var obj = document.getElementById(id);
         var id4= obj.playlist.add('rtsp://admin:admin@192.168.1.108:554/cam/realmonitor?channel=1&subtype=0&unicast=true&proto=Onvif');
         obj.playlist.playItem(id4);
         obj.playlist.play();
+
     }
     function change_two() {
-        var obj = document.getElementById(id);
-        if(id == '0'){
+        if(id == "0"){
             arr[0] = "haikang";
-        }else if(id == '1'){
-            arr[1] = 'haikang';
-        }else if(id == '2'){
-            arr[2] = 'haikang';
-        }else if(id == '3'){
-            arr[3] = 'haikang';
+            var l = document.getElementById("log_window1");
+            var del = document.getElementById('del1');
+            var ptz = document.getElementById('ptz1');
+        }else if(id == "1"){
+            arr[1] = "haikang";
+            var l = document.getElementById("log_window2");
+            var del = document.getElementById('del2');
+            var ptz = document.getElementById('ptz2');
+        }else if(id == "2"){
+            arr[2] = "haikang";
+            var l = document.getElementById("log_window3");
+            var del = document.getElementById('del3');
+            var ptz = document.getElementById('ptz3');
+        }else if(id == "3"){
+            arr[3] = "haikang";
+            var l = document.getElementById("log_window4");
+            var del = document.getElementById('del4');
+            var ptz = document.getElementById('ptz4');
         }
+        l.style.display = "none";
+        del.style.display = 'block';
+        ptz.style.display = 'block';
+
+        var obj = document.getElementById(id);
         var id4= obj.playlist.add('rtsp://admin:admin123@192.168.1.64:554/Streaming/Channels/101?transportmode=unicast&profile=Profile_1');
         obj.playlist.playItem(id4);
         obj.playlist.play();
+
     }
     function PTZControl(funcName){
         brand = arr[id];
-        //alert(brand);
         var res = null;
         switch(funcName){
             case "PTZLeftUp":
@@ -1175,19 +1391,50 @@
             case "PTZSmallAperture":
                 res = StartTask_PTZ(16,brand);	//云台：光圈-
                 break;
+        }
     }
-}
     function StartTask_PTZ(ptz,brand) {
         $.ajax({
-            url: "http://www.qs1.com/home/run/ptz?method=GetDateTime&datetime=" +new Date().getTime()+"&ptz="+ptz+"&brand="+brand,  // 这里改成你要执行的php便可,
+            url: "http://www.qs.com/home/run/ptz?method=GetDateTime&datetime=" +new Date().getTime()+"&ptz="+ptz+"&brand="+brand,  // 这里改成你要执行的php便可,
             success: function(data){
                 console.log(data);
             }
         });
-        //alert(url+user+pwd+profiletoken);
-
+//        alert(url+user+pwd+profiletoken);
     }
 
 
+    //关闭视频方法
+    function closeVideo1(){
+        document.getElementById("log_window1").style.display = 'block';
+        document.getElementById('del1').style.display = 'none';
+        document.getElementById('ptz1').style.display = 'none';
+        document.getElementById("log_window1").style.border = '0px solid red';
+        var obj = document.getElementById("0");
+        obj.playlist.stop();
+        obj.playlist.items.clear();
+
+
+    }
+    function closeVideo2(){
+        document.getElementById("log_window2").style.display = 'block';
+        document.getElementById('del2').style.display = 'none';
+        document.getElementById('ptz2').style.display = 'none';
+        document.getElementById("log_window2").style.border = '0px solid red';
+
+    }
+    function closeVideo3(){
+        document.getElementById("log_window3").style.display = 'block';
+        document.getElementById('del3').style.display = 'none';
+        document.getElementById('ptz3').style.display = 'none';
+        document.getElementById("log_window3").style.border = '0px solid red';
+
+    }
+    function closeVideo4(){
+        document.getElementById("log_window4").style.display = 'block';
+        document.getElementById('del4').style.display = 'none';
+        document.getElementById('ptz4').style.display = 'none';
+        document.getElementById("log_window4").style.border = '0px solid red';
+    }
 </script>
 </html>

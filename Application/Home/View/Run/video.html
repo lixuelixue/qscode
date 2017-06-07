@@ -33,23 +33,23 @@
     <script src="__PUBLIC__/home/resources/scripts/axure/variables.js"></script>
     <script src="__PUBLIC__/home/resources/scripts/axure/drag.js"></script>
     <script src="__PUBLIC__/home/resources/scripts/axure/move.js"></script>
+    <script src="__PUBLIC__/home/resources/scripts/axure/visibility.js"></script>
+    <script src="__PUBLIC__/home/resources/scripts/axure/style.js"></script>
     <script src="__PUBLIC__/home/resources/scripts/axure/adaptive.js"></script>
     <script src="__PUBLIC__/home/resources/scripts/axure/tree.js"></script>
     <script src="__PUBLIC__/home/resources/scripts/axure/init.temp.js"></script>
-    <script src="__PUBLIC__/home/files/vids/scripts/axure/visibility.js"></script>
-    <script src="__PUBLIC__/home/resources/scripts/axure/style.js"></script>
-    <script src="__PUBLIC__/home/resourceeo/data.js"></script>
-    <script src="__PUBLIC__/home//scripts/axure/viewer.js"></script>
-    <script src="__PUBLIC__/home/resourceresources/scripts/axure/legacy.js"></script>
-    <script src="__PUBLIC__/home/resourcess/scripts/axure/math.js"></script>
+    <script src="__PUBLIC__/home/files/video/data.js"></script>
+    <script src="__PUBLIC__/home/resources/scripts/axure/legacy.js"></script>
+    <script src="__PUBLIC__/home/resources/scripts/axure/viewer.js"></script>
+    <script src="__PUBLIC__/home/resources/scripts/axure/math.js"></script>
+
     <style type="text/css">
         .divImgIn {
             text-align:center;
-            width:100px;
-            height:50px; }
-        .divImgOut{
-            background-color: #8f949a
+            width:200px;
+            height:30px;
         }
+
 
         .window{
             width:100%;
@@ -93,6 +93,19 @@
             right: 1px;
             background-color:#999999;
             display: none;
+        }
+        .menu{
+            width:100%;
+            height:100%;
+            margin: auto;
+            position: absolute;
+            z-index:99;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: block;
+            background-color: #4a4a4a;
         }
 
     </style>
@@ -553,8 +566,10 @@
         <!--</div>-->
 
         <div>
-            <a><div class="divImgIn" name="大华" ondblclick="change_one()">大华</div></a>
-            <a><div class="divImgIn" name="海康" ondblclick="change_two()">海康</div></a>
+            <button class="divImgIn" name="大华" ondblclick="change_one()">大华</button>
+            <button class="divImgIn" name="海康" ondblclick="change_two()">海康</button>
+            <!--<div class="divImgIn" name="大华" ondblclick="change_one()" style="background-color: #199ED8; width: 100%">大华</div>-->
+            <!--<div class="divImgIn" name="海康" ondblclick="change_two()">海康</div>-->
         </div>
 
     </div>
@@ -808,7 +823,7 @@
             <!--云台控制-->
             <div id="ptz1" class="ptz">
                 <a href="javascript:gain_id1()">
-                    <iframe  frameBorder="0" marginHeight="0" marginWidth="0" allowtransparency="true" id="ifrPtz"
+                    <iframe  frameBorder="0" marginHeight="0" marginWidth="0" allowtransparency="true" id="ifrPtz1"
                              style=" float: right; top:0px;left:10px;width:100%; height:100%">
 
                     </iframe>
@@ -862,16 +877,96 @@
                     </iframe>
                 </a>
             </div>
-
-
             <div id="ptz2" class="ptz">
                 <a href="javascript:gain_id2()">
-                    <iframe  frameBorder="0" marginHeight="0" marginWidth="0" allowtransparency="true" id="ifrPtz"
+                    <iframe  frameBorder="0" marginHeight="0" marginWidth="0" allowtransparency="true" id="ifrPtz2"
                              style=" float: right; top:0px;left:10px;width:100%; height:100%">
 
                     </iframe>
                 </a>
             </div>
+            <!--<div id="u312" class="ax_default box_1">
+                <div id="u312_div" class=""></div>
+                &lt;!&ndash; Unnamed () &ndash;&gt;
+                <div class="window" id="u313" class="text" style="visibility: visible;">
+                    <iframe frameBorder="0" marginHeight="0" marginWidth="0" style="background-color: #15d6ba;
+                 position:absolute; visibility:inherit; top:0px;left:0px;width:100%; height:100%;z-index:-1; filter:alpha(opacity=0);">
+                    </iframe>
+                    <p><span>消防系统</span></p>
+                </div>
+            </div>-->
+
+            <div class="">
+               <!--<iframe frameBorder="0" marginHeight="0" marginWidth="0" style=";-->
+                 <!--position:absolute; visibility:inherit; top:0px;left:0px;width:100%; height:100%;z-index:-1; filter:alpha(opacity=0);">-->
+                <!--</iframe>-->
+                <div id="u311" class="ax_default ax_default_hidden" data-label="子系统" style="display: none; visibility: hidden">
+
+
+
+                    <div id="u311_state0" class="panel_state" data-label="State1">
+                        <!--<iframe frameBorder="0" marginHeight="0" marginWidth="0" style="background-color: transparent;-->
+                 <!--position:absolute; visibility:inherit; top:0px;left:0px;width:100%; height:100%;z-index:-1; filter:alpha(opacity=0);">-->
+                        <!--</iframe>-->
+                        <div id="u311_state0_content" class="panel_state_content">
+
+                            <!-- Unnamed (矩形) -->
+                            <div id="u312" class="ax_default box_1">
+
+                                <div id="u312_div" class=""></div>
+                                <!-- Unnamed () -->
+                                <div id="u313" class="text menu" style="visibility: visible;">
+                                    <iframe frameBorder="0" marginHeight="0" marginWidth="0" style="background-color: transparent;
+                 position:absolute; visibility:inherit; top:0px;left:0px;width:100%; height:100%;z-index:-1; filter:alpha(opacity=0);">
+                                    </iframe>
+                                    <p><span>消防系统</span></p>
+                                </div>
+                            </div>
+
+                            <!-- Unnamed (矩形) -->
+                            <div id="u314" class="ax_default box_1">
+                                <div id="u314_div" class=""></div>
+                                <!-- Unnamed () -->
+                                <div id="u315" class="text menu" style="visibility: visible;">
+                                    <iframe frameBorder="0" marginHeight="0" marginWidth="0" style="background-color: #transparent;
+                 position:absolute; visibility:inherit; top:0px;left:0px;width:100%; height:100%;z-index:-1; filter:alpha(opacity=0);">
+                                    </iframe>
+                                    <p><span>安防系统</span></p>
+                                </div>
+                            </div>
+
+                            <!-- Unnamed (矩形) -->
+                            <div id="u316" class="ax_default box_1">
+                                <div id="u316_div" class=""></div>
+                                <!-- Unnamed () -->
+                                <div id="u317" class="text menu" style="visibility: visible;">
+                                    <iframe frameBorder="0" marginHeight="0" marginWidth="0" style="background-color: #transparent;
+                 position:absolute; visibility:inherit; top:0px;left:0px;width:100%; height:100%;z-index:-1; filter:alpha(opacity=0);">
+                                    </iframe>
+                                    <!--<div style="width: 30px; height: 20px; background-color: green"></div>-->
+                                    <p><span>自控系统</span></p>
+                                </div>
+                            </div>
+
+                            <!-- Unnamed (矩形) -->
+                            <div id="u318" class="ax_default box_1">
+                                <div id="u318_div" class=""></div>
+                                <!-- Unnamed () -->
+                                <div id="u319" class="text menu" style="visibility: visible;">
+                                    <iframe frameBorder="0" marginHeight="0" marginWidth="0" style="background-color: #transparent;
+                 position:absolute; visibility:inherit; top:0px;left:0px;width:100%; height:100%;z-index:-1; filter:alpha(opacity=0);">
+                                    </iframe>
+                                    <p><span>配电与照明</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
 
             <object classid="clsid:9BE31822-FDAD-461B-AD51-BE1D1C159921"
                     width="100%"
@@ -918,7 +1013,7 @@
 
             <div id="ptz3" class="ptz">
                 <a href="javascript:gain_id3()">
-                    <iframe  frameBorder="0" marginHeight="0" marginWidth="0" allowtransparency="true" id="ifrPtz"
+                    <iframe  frameBorder="0" marginHeight="0" marginWidth="0" allowtransparency="true" id="ifrPtz3"
                              style=" float: right; top:0px;left:10px;width:100%; height:100%">
 
                     </iframe>
@@ -969,7 +1064,7 @@
 
             <div id="ptz4" class="ptz">
                 <a href="javascript:gain_id4()">
-                    <iframe  frameBorder="0" marginHeight="0" marginWidth="0" allowtransparency="true" id="ifrPtz"
+                    <iframe  frameBorder="0" marginHeight="0" marginWidth="0" allowtransparency="true" id="ifrPtz4"
                              style=" float: right; top:0px;left:10px;width:100%; height:100%">
 
                     </iframe>
@@ -1074,15 +1169,15 @@
             </div>
 
             <!-- Unnamed (动态面板) -->
-            <!--<div id="u309" class="ax_default">
+            <div id="u309" class="ax_default">
                 <div id="u309_state0" class="panel_state" data-label="State1">
                     <div id="u309_state0_content" class="panel_state_content">
-                        &lt;!&ndash; Unnamed (热区) &ndash;&gt;
+                        <!--&lt;!&ndash; Unnamed (热区) &ndash;&gt;-->
                         <div id="u310" class="ax_default">
                         </div>
                     </div>
                 </div>
-            </div>-->
+            </div>
 
             <!-- 子系统 (动态面板) -->
             <div id="u311" class="ax_default ax_default_hidden" data-label="子系统" style="display: none; visibility: hidden">

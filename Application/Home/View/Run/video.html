@@ -1340,7 +1340,7 @@
     // 获取视频播放位置的object的id
     function gain_id1() {
         id = "0";
-        console.log(id);
+        //console.log(id);
         document.getElementById('log_window1').style.border = '1px solid red';
         document.getElementById('log_window2').style.border = '0px solid red';
         document.getElementById('log_window3').style.border = '0px solid red';
@@ -1348,7 +1348,7 @@
     }
     function gain_id2() {
         id = "1";
-        console.log(id);
+        //console.log(id);
         document.getElementById('log_window2').style.border = '1px solid red';
         document.getElementById('log_window1').style.border = '0px solid red';
         document.getElementById('log_window3').style.border = '0px solid red';
@@ -1356,7 +1356,7 @@
     }
     function gain_id3() {
         id = "2";
-        console.log(id);
+        //console.log(id);
         document.getElementById('log_window3').style.border = '1px solid red';
         document.getElementById('log_window2').style.border = '0px solid red';
         document.getElementById('log_window1').style.border = '0px solid red';
@@ -1364,7 +1364,7 @@
     }
     function gain_id4() {
         id = "3";
-        console.log(id);
+        //console.log(id);
         document.getElementById('log_window4').style.border = '1px solid red';
         document.getElementById('log_window2').style.border = '0px solid red';
         document.getElementById('log_window3').style.border = '0px solid red';
@@ -1490,7 +1490,7 @@
     }
     function StartTask_PTZ(ptz,brand) {
         $.ajax({
-            url: "http://www.qs.com/home/run/ptz?method=GetDateTime&datetime=" +new Date().getTime()+"&ptz="+ptz+"&brand="+brand,  // 这里改成你要执行的php便可,
+            url: "__APP__/home/run/ptz?method=GetDateTime&datetime=" +new Date().getTime()+"&ptz="+ptz+"&brand="+brand,  // 这里改成你要执行的php便可,
             success: function(data){
                 console.log(data);
             }

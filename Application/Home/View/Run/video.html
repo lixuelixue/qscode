@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="__PUBLIC__/home/css/video/video.css">
     <script src="/Public/home/js/jquery-1.7.1.min.js"></script>
     <style>
-        /*删除按钮*/
+        /*删除部分*/
         .del{
             background-image: url('__PUBLIC__/home/images/video/close.png');
             background-size: 100%;
@@ -23,7 +23,7 @@
             background-color: #999999;
             display: none;
         }
-        /*云台控制按钮*/
+        /*云台控制部分*/
         .ptz{
             background-image: url('__PUBLIC__/home/images/video/ptz.png');
             background-size: 100%;
@@ -420,8 +420,6 @@
     function PTZControl(funcName){
         brand = arr[id-1];
         var res = null;
-//        alert(brand);
-//        alert(funcName);
         switch(funcName){
             case "PTZLeftUp":
                 res = StartTask_PTZ(25,brand);	//云台：左上
@@ -482,7 +480,5 @@
         });
         alert(url+user+pwd+profiletoken);
     }
-
-
 </script>
 </html>

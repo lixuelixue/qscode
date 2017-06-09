@@ -1,24 +1,3 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-.main{
-    width:1200px;
-    height:800px;
-    padding: 2px;
-    font-size:14px;
-    margin:0 auto;
-}
-body{
-    font-family:"Normal";
-}
-.border{
-    border: #797979 1px solid;
-}
-.shadow{
-    box-shadow:5px 5px 5px #797979;
-}
-
 
 /*二级导航栏设置开始*/
 .switchViewBtn{

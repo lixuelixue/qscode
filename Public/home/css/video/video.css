@@ -1,3 +1,10 @@
+
+.content{
+    clear: both;
+    width: 1200px;
+    height: 745px;
+    margin-top: 5px;
+}
 /*视频播放和云台*/
 .contentView{
     width: 100%;

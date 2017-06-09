@@ -20,93 +20,6 @@ body{
 }
 
 
-/*导航栏设置*/
-
-/*一级导航栏开始*/
-.navBar{
-    width: 1200px;
-    height: 45px;
-    background-color: #666666;
-}
-/*标题设置开始*/
-.title{
-    color: #ffffff;
-    width:200px;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-    padding: 7.5px;
-}
-/*标题设置结束*/
-.navLeft{
-    width: 500px;
-    height: 45px;
-    float: left;
-}
-.nav{
-    float: left;
-    width: 500px;
-    height: 45px;
-}
-.nav ul{
-    list-style: none;
-    margin: 0px;
-    padding: 0px;
-    width: auto;
-}
-ul li{
-    float: left;
-    list-style: none;
-    height: 45px;
-}
-.nav ul li a{
-    width:80px;
-    height:45px;
-    line-height: 43px;
-    color: white;
-    display: block;     /*把a变成块级元素*/
-    text-align: center;
-    text-decoration:none;
-}
-
-.nav ul li a:hover{
-    background-color: #333333;
-}
-.navRight{
-    padding-top: 12px;
-    padding-right: 70px;
-    float:right;
-    text-align:center;
-}
-.setting{
-    position: relative;
-    float: right;
-    right:-135px;
-    padding-top: 10px;
-}
-/*二级菜单设置开始*/
-.navBar_two{
-    position: relative;
-}
-.nav ul li ul a{
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    background-color: #666666;
-}
-.nav ul li ul{
-    display:none;
-}
-.nav ul li:hover ul{
-    display:block;
-}
-/*二级菜单设置结束*/
-
-/*一级导航栏结束*/
-
-
-
-
 /*二级导航栏设置开始*/
 .switchViewBtn{
     text-align: center;
@@ -138,7 +51,6 @@ ul li{
     float: right;
 }
 /*二级导航栏结束*/
-
 
 
 .content{

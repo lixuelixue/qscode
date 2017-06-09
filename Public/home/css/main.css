@@ -19,33 +19,7 @@ body{
     margin:0 auto;
     /*color: #aaaaaa;*/
 }
-.navBar{
-    width: 1200px;
-    height: 45px;
-    background-color: #666666;
-    margin: auto;
-}
-.navLeft{
-    width: 500px;
-    height: 45px;
-    float: left;
-}
-.nav{
-    float: left;
-    width: 500px;
-    height: 45px;
-}
-.nav ul{
-    list-style: none;
-    margin: 0px;
-    padding: 0px;
-    width: auto;
-}
-ul li{
-    float: left;
-    list-style: none;
-    height: 45px;
-}
+
 .content{
     clear: both;
     width: 1200px;

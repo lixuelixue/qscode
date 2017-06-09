@@ -79,9 +79,10 @@ ul li{
     text-align:center;
 }
 .setting{
-    position: absolute;
-    left:1500px;
-    padding-top: 12px;
+    position: relative;
+    float: right;
+    right:-135px;
+    padding-top: 10px;
 }
 /*二级菜单设置开始*/
 .navBar_two{

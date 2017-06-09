@@ -28,6 +28,9 @@ class RunController extends Controller
     public function fire(){
         $this -> display();
     }
+    public function gisSmall(){
+        $this -> display();
+    }
     public function ptz(){
         if($_GET != "" && $_GET['brand'] != undefined){
             $ptz = $_GET['ptz'];

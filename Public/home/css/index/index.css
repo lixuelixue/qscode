@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.main{
+    width: 1200px;
+    height: 820px;
+    padding: 10px;
+    color: #aaaaaa;
+    font-size: 14px;
+    margin: 0 auto;
+
+}
+.border{
+    border: #797979 1px solid;
+}
+.title{
+    margin:100px auto;
+    width:1200px;
+}
+.title_word{
+    width:100%;
+    color:black;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 100px;        /*设置文字行距等于div的高度*/
+    overflow:hidden;
+}
+.title_logo{
+    width:150px;
+    height:70px;
+    position: absolute;
+    left:550px;
+    top:120px;
+}
+.float{
+    float: left;
+}
+.img_left{
+    height: 400px;
+    width: 400px;
+    float: left;
+}
+.img_left img{
+    width:400px;
+    height:350px;
+}
+.login_right{
+    width: 400px;
+    height: 400px;
+}
+.img{
+    width: 100%;
+    height: 300px;
+    margin: 180px 60px;
+}
+.login_right{
+    margin-left: 550px;
+    text-align: center;
+    height: 300px;
+}
+h2{
+    margin: 30px 0 25px 0;
+    text-align: center;
+    color: #199ED8;
+}
+.stl{
+    width: 210px;
+    height: 30px;
+    border: 0px;
+    border-bottom: thin solid #666666;
+}
+input[placeholder]{
+    color: #aaaaaa;
+}
+#loginForm img{
+    position: relative;
+    top: 10px;
+}

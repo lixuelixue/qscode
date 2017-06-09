@@ -1,0 +1,212 @@
+/*视频播放和云台*/
+.contentView{
+    width: 100%;
+    height: 600px;
+}
+
+/*左侧选择监控点*/
+.select{
+    width: 200px;
+    height: 600px;
+    float: left;
+}
+/*监控点切换*/
+.rtspSelect{
+    text-align: center;
+    color: black;
+    height: 552px;
+}
+/*监控点切换按钮*/
+.rtspSelect button{
+    height: 22px;
+    width: 100%;
+}
+
+/*视频播放区域*/
+.videoDiv{
+    width: 800px;
+    height: 600px;
+    margin: 5px;
+    display: inline-block;
+}
+
+/*每个播放窗口*/
+.objDiv{
+    width: 49.5%;
+    height: 49%;
+    float: left;
+    margin: 2px;
+    background-color: #ffffff;
+    position: relative;
+}
+/*覆盖层*/
+.vidLayer{
+    width:100%;
+    height:100%;
+    margin: auto;
+    z-index:3;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    background-color:#000000;
+    position: relative;
+}
+.clear{
+    clear: both;
+}
+/*云台*/
+.ctl{
+    width: 180px;
+    height: 600px;
+    display: inline-block;
+    position: absolute;
+    top: 118px;
+    margin-top: -3px;
+    color: black;
+}
+
+/*视频回放*/
+.vidBot{
+    width: 100%;
+    height: 80px;
+    position: relative;
+    top: 8px;
+    background-color:#cccccc;
+}
+.vidBotCtr{
+    width: 100%;
+    height: 50%;
+    text-align: right;
+    
+}
+.vidBotBac{
+    width: 100%;
+    height: 50%;
+}
+.vidBotBac img{
+    width: 100%;
+}
+.vidBotCtl1{
+    width: 60%;
+    padding-left:20px; 
+}
+.vidBotCtl1 img{
+    padding: 10px;
+}
+.vidBotCtl1 span{
+    background-color: red;
+    margin-top: 10px;
+
+}
+.vidBotCtl2{
+    width: 30%;
+}
+.vidBotCtl2 div{
+    width: 100px;
+    height: 15px;
+    background-color: red;
+}
+.vidBotCtl3{
+    width: 30%;
+}
+
+
+
+
+/*导航栏设置*/
+
+/*一级导航栏设置*/
+.title{
+    color: #ffffff;
+    width:200px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    padding: 7.5px;
+}
+.nav{
+    float: left;
+    width: 500px;
+    height: 45px;
+}
+.nav ul{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+}
+.nav ul li a{
+    width:80px;
+    height:45px;
+    line-height: 45px;
+    color: white;
+    display: block;     /*把a变成块级元素*/
+    text-align: center;
+    text-decoration:none;
+}
+.navBar_two{
+    position: relative;
+}
+.nav ul li a:hover{
+    background-color: #333333;
+}
+.navRight{
+    padding-top: 12px;
+    padding-right: 70px;
+    float:right;
+    text-align:center;
+}
+.setting{
+    position: absolute;
+    left:1500px;
+    padding-top: 12px;
+}
+
+/*二级菜单设置*/
+.nav ul li ul a{
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    background-color: #666666;
+}
+.nav ul li ul{
+    display:none;
+}
+.nav ul li:hover ul{
+    display:block;
+}
+/*二级导航栏设置开始*/
+.switchViewBtn{
+    text-align: center;
+    width:100%;
+    padding-top: 0px;
+    height: 30px;
+    color: #000000;
+}
+.switchViewBtn a{
+    width:80px;
+    height:30px;
+    line-height: 28px;
+    color: black;
+    display: block;     /*把a变成块级元素*/
+    text-align: center;
+    text-decoration:none;
+}
+.switchViewIcon{
+    width:100%;
+    height: 20px;
+    line-height: 28px;
+}
+.switchViewIcon img{
+    float:right;
+    padding-right: 63px;
+}
+.switchViewBtn a{
+    text-decoration: none;
+    float: right;
+}
+/*二级导航栏结束*/
+
+

@@ -40,7 +40,7 @@ ul li{
 .nav ul li a{
     width:80px;
     height:45px;
-    line-height: 43px;
+    line-height: 45px;
     color: white;
     display: block;     /*把a变成块级元素*/
     text-align: center;
